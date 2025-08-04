@@ -7,7 +7,9 @@ let currentsong = new Audio()
 
 async function get_songs(folder ) {
 currFolder=folder
-  let a = await fetch(`http://127.0.0.1:5500/${folder}/`)
+let a = await fetch(`${folder}/`);
+  
+
   let response = await a.text()
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -25,7 +27,7 @@ currFolder=folder
   songurl.innerHTML=" "
   for (const song of songs) {
     songurl.innerHTML = songurl.innerHTML + `<li>
-                            <img src="music.svg" alt="">
+                            <img src="images/music.svg" alt="">
                             <div class="info">
                                 <p>${song.replaceAll("%20", " ").split(".mp3")[0]}</p>
                                 
