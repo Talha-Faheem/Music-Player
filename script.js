@@ -92,7 +92,7 @@ async function displayAlbums() {
     {
       
       let f_name=e.href.split("/").slice(-1)[0]
-      let a=await fetch(`http://127.0.0.1:5500/songs/${f_name}/info.json`)
+      let a=await fetch(`songs/${f_name}/info.json`)
       let response=await a.json();
       card_container.innerHTML=card_container.innerHTML+`<div data-folder="${f_name}" class="card">
                         <div class="play">
